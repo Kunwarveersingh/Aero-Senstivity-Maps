@@ -3,7 +3,16 @@
 ## Shared context and working preferences
 
 - Read `docs/SPEC.md` and relevant notes in `docs/handoffs/` when starting work.
-  Use `README.md` for the project overview.
+  Use `README.md` for the project overview. Review recent commits and local
+  changes, summarize the current state and open questions, and choose the
+  session's task with the collaborator before starting new work.
+- At the start of each new session, ask the user's preferred name. An explicit
+  introduction in that session satisfies this requirement. Never infer identity
+  from workspace paths or account names. Confirm placeholder names before use.
+- Label individual research directions and handoff contributions with confirmed
+  names; keep shared decisions separate. Ask about the collaborator's research
+  focus and current task when setting up a new collaborator, then request other
+  details only as needed.
 - Both collaborators are MATLAB beginners. Explain concepts in plain language,
   introduce technical terms as needed, and explain the reasoning behind equations
   and implementation choices.
@@ -13,8 +22,12 @@
 - Separate agreed decisions, proposals, assumptions, and unresolved questions.
   Flag conflicting requirements rather than silently replacing them.
 - Do not invent missing project details or present unvalidated results as findings.
-- The project introduction is agreed; detailed planning and implementation have
-  not started. Develop the project point by point with the collaborators.
+- Develop the project point by point with the collaborators. Keep current project
+  status in `docs/SPEC.md` and handoffs rather than treating it as a permanent rule.
+- Maintain `docs/REPORT.md` as the project's thesis-style narrative. Ask focused
+  questions about missing reasoning, including decisions researched outside the
+  coding assistants. Capture attribution, rationale, evidence, and decision status.
+  Mark unanswered sections "To be documented"; never invent completed work.
 - Do not assume that reference-only parameters change geometry or physics, that
   Python runs as a native STAR-CCM+ macro, or that the existing CFD template has
   any particular configuration. Follow the inspection requirements in `docs/SPEC.md`.

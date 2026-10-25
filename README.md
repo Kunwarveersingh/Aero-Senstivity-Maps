@@ -4,15 +4,15 @@ A collaborative university project developing **MATLAB** code to generate aerody
 
 The project investigates how vehicle attitude and setup affect downforce, drag, and aerodynamic balance.
 
-> Status: Project introduction agreed. Detailed planning and implementation have not started. See [docs/SPEC.md](docs/SPEC.md) for the agreed scope and unresolved questions.
+> Status: Initial literature review and Phase 1 scope discussions have begun. Detailed study design remains open; no project implementation or simulation results are established here. See [docs/SPEC.md](docs/SPEC.md) for the agreed scope and unresolved questions.
 
 ## Agreed Introduction
 
-Start with straight-line operating conditions, particularly front and rear ride-height effects. Keep the simulation count as low as reasonably possible while retaining enough evidence to support conclusions. Cornering-related conditions will be considered later.
+Phase 1 is a straight-line proof of concept with front and rear ride height as the only varied inputs, to demonstrate the CFD → CSV → MATLAB workflow and assess its efficiency. Keep the simulation count as low as reasonably possible while retaining enough evidence to support conclusions. Cornering-related conditions will be considered later.
 
-The intended sequence is **theory → CAD → simulation**. Around the simulation phase, develop export/data-processing automation and initial MATLAB code in parallel with CFD work, improving MATLAB code as results become available. This sequence is not a finalized workflow or timeline.
+The earlier intended sequence was **theory → CAD → simulation**. Kunwar now proposes preparing CAD alongside theoretical research, aiming to have suitable values agreed when CAD is ready. The responsibility split and revised sequence remain proposals; see `docs/SPEC.md`. The proposed case approach is manual ride-height changes, separate STEP exports, and simulations run one by one. Around the simulation phase, develop export/data-processing automation and initial MATLAB code in parallel with CFD work, improving MATLAB code as results become available. Neither the workflow nor the timeline is finalized.
 
-Initially, geometry changes in CAD, geometry updates in STAR-CCM+, and corresponding STAR-CCM+ parameter updates will be manual. Distinguish **simulation-driving parameters**, which control the simulation through actual model connections, from **reference-only parameters**, which describe a case for export and MATLAB. Changing a reference-only parameter does not imply a change to geometry or physics.
+Initially, geometry changes in CAD, geometry updates in STAR-CCM+, and required simulation-driving STAR-CCM+ parameter updates will be manual. Filename-based or companion-file ride-height metadata is under discussion to avoid duplicate reference-only entry; no format is selected. Distinguish **simulation-driving parameters**, which control the simulation through actual model connections, from **reference-only parameters**, which describe a case for export and MATLAB. Changing a reference-only parameter does not imply a change to geometry or physics.
 
 Inspect the existing STAR-CCM+ template together before deciding on changes. Confirm the supported automation mechanism for the team's STAR-CCM+ version before implementation: Python automation is intended, but native Python macro support is not assumed. CSV exports should contain relevant case parameters and aerodynamic results; the schema remains undecided.
 
@@ -130,7 +130,8 @@ Interpolation and extrapolation must be identified explicitly. Unsupported regio
 ├── CLAUDE.md               Imports shared instructions for Claude Code
 ├── README.md               Project overview and setup
 ├── docs/
-│   ├── SPEC.md             Requirements and agreed conventions
+│   ├── SPEC.md             Requirements, proposals, and open decisions
+│   ├── REPORT.md           Thesis-style project narrative and evidence
 │   ├── methodology.md      Mapping and sensitivity methods
 │   └── handoffs/           Task progress and collaboration notes
 ├── starccm/
@@ -193,7 +194,7 @@ Required Python packages and MATLAB toolboxes will be documented once selected.
 
 ## Getting Started
 
-For now, read `README.md`, `docs/SPEC.md`, `AGENTS.md`, and relevant notes in `docs/handoffs/`. Detailed planning and implementation have not started; choose the first topic together. The setup steps below are retained for future use, and no executable sample workflow is established yet.
+For now, read `README.md`, `docs/SPEC.md`, `AGENTS.md`, and relevant notes in `docs/handoffs/`. Initial research and scope discussions have begun; choose the next task together. Detailed study design remains open and implementation is not established. The setup steps below are retained for future use, and no executable sample workflow is established yet.
 
 1. Clone the repository.
 2. Read `docs/SPEC.md` for agreed definitions and requirements.
@@ -205,9 +206,11 @@ Executable setup and run commands will be added as the implementation becomes av
 
 ## Collaboration
 
-This university project is developed by two collaborators using Codex and Claude Code. The shared repository holds code, methodology, research decisions, validation evidence, and progress notes so either collaborator can understand and continue the other's work.
+This university project is for **Strohm und Söhne e.V. Noris Racing**, at **Technische Hochschule Nürnberg Georg Simon Ohm**, and is developed by two collaborators using Codex and Claude Code. The shared repository holds code, methodology, research decisions, validation evidence, and progress notes so either collaborator can understand and continue the other's work.
 
 Both collaborators are MATLAB beginners. Explain concepts in plain language, one topic at a time, including the reasoning behind equations and implementation choices. Distinguish necessary initial work, useful work that can wait, and optional work. Separate agreed decisions, proposals, assumptions, and unresolved questions; do not invent missing details or treat unvalidated results as established findings.
+
+The [project report](docs/REPORT.md) records methods, reasoning, evidence, and unanswered questions for future team members. Ask each collaborator their name at session start; never infer identity from a path. Proposed responsibilities and identity placeholders are recorded in the specification.
 
 Retained collaboration guidance:
 
