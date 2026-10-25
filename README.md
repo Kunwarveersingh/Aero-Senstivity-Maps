@@ -1,10 +1,22 @@
 # FSAE Aerodynamic Sensitivity Mapping
 
-A workflow connecting **STAR-CCM+**, **Python**, and **MATLAB** to generate aerodynamic performance and sensitivity maps for a Formula SAE car.
+A collaborative university project developing **MATLAB** code to generate aerodynamic performance and sensitivity maps for a Formula SAE car using **STAR-CCM+** CFD results, with **Python** for export automation and data processing and **CSV** files connecting the results to MATLAB.
 
 The project investigates how vehicle attitude and setup affect downforce, drag, and aerodynamic balance.
 
-> Status: Initial development. This README describes the planned workflow.
+> Status: Project introduction agreed. Detailed planning and implementation have not started. See [docs/SPEC.md](docs/SPEC.md) for the agreed scope and unresolved questions.
+
+## Agreed Introduction
+
+Start with straight-line operating conditions, particularly front and rear ride-height effects. Keep the simulation count as low as reasonably possible while retaining enough evidence to support conclusions. Cornering-related conditions will be considered later.
+
+The intended sequence is **theory → CAD → simulation**. Around the simulation phase, develop export/data-processing automation and initial MATLAB code in parallel with CFD work, improving MATLAB code as results become available. This sequence is not a finalized workflow or timeline.
+
+Initially, geometry changes in CAD, geometry updates in STAR-CCM+, and corresponding STAR-CCM+ parameter updates will be manual. Distinguish **simulation-driving parameters**, which control the simulation through actual model connections, from **reference-only parameters**, which describe a case for export and MATLAB. Changing a reference-only parameter does not imply a change to geometry or physics.
+
+Inspect the existing STAR-CCM+ template together before deciding on changes. Confirm the supported automation mechanism for the team's STAR-CCM+ version before implementation: Python automation is intended, but native Python macro support is not assumed. CSV exports should contain relevant case parameters and aerodynamic results; the schema remains undecided.
+
+The sections below retain earlier objectives and technical ideas for discussion. Candidate variables beyond the initial scope, output lists, validation details, workflow steps, and milestones are **proposals**, not agreed research decisions. Discuss scope expansion before adopting them.
 
 ## Objectives
 
@@ -14,7 +26,9 @@ The project investigates how vehicle attitude and setup affect downforce, drag, 
 - Identify operating regions with strong aerodynamic sensitivity.
 - Document assumptions, data quality, and validation results.
 
-## Workflow
+## Earlier Workflow Proposal (Not Finalized)
+
+This proposed data flow is retained for discussion; the intended development sequence is described above.
 
 ```text
 Define parameter study
@@ -46,6 +60,7 @@ Simulation automation will be added where supported and documented.
 
 ### Python
 
+- Support export automation through a mechanism confirmed for the installed STAR-CCM+ version.
 - Collect STAR-CCM+ exports.
 - Validate required fields and identify missing or duplicate cases.
 - Standardize units, names, and data structure.
@@ -72,7 +87,7 @@ Simulation automation will be added where supported and documented.
 | Vehicle speed | Freestream speed |
 | Wing settings | Selected aerodynamic configuration parameters |
 
-The initial study will use a subset of these variables.
+The agreed initial focus is front and rear ride height under straight-line conditions. Other variables are retained as candidates for later discussion, not additions to the initial scope.
 
 Reference points, units, and positive directions must be defined before generating cases. Pitch and rake must remain consistent with the ride-height definitions.
 
@@ -133,11 +148,10 @@ Interpolation and extrapolation must be identified explicitly. Unsupported regio
 │   ├── raw/                Original CFD exports
 │   └── processed/          Validated datasets
 └── results/
-    ├── figures/            Generated maps and plots
-    └── tables/             Exported analysis results
+    └── <study-name>/       Reviewed deliverables for a study
 ```
 
-This structure is planned and will be created during initial setup.
+This structure is a proposal; directories will be created only when needed and agreed. Temporary scripts, debugging output, intermediate data, and draft figures belong in `work/<task-name>/`. Reviewed deliverables belong in `results/<study-name>/`, following `AGENTS.md`.
 
 ## Data Management
 
@@ -171,13 +185,15 @@ Exact versions and dependencies will be recorded during setup.
 | Software | Purpose | Version |
 |---|---|---|
 | STAR-CCM+ | CFD simulation and export | TBD |
-| Python | Data processing and validation | TBD |
+| Python | Export automation and data processing | TBD |
 | MATLAB | Mapping, numerical analysis, and visualization | TBD |
 | Git | Version control | Team-supported version |
 
 Required Python packages and MATLAB toolboxes will be documented once selected.
 
 ## Getting Started
+
+For now, read `README.md`, `docs/SPEC.md`, `AGENTS.md`, and relevant notes in `docs/handoffs/`. Detailed planning and implementation have not started; choose the first topic together. The setup steps below are retained for future use, and no executable sample workflow is established yet.
 
 1. Clone the repository.
 2. Read `docs/SPEC.md` for agreed definitions and requirements.
@@ -189,7 +205,11 @@ Executable setup and run commands will be added as the implementation becomes av
 
 ## Collaboration
 
-This project is developed by two collaborators using Codex and Claude Code.
+This university project is developed by two collaborators using Codex and Claude Code. The shared repository holds code, methodology, research decisions, validation evidence, and progress notes so either collaborator can understand and continue the other's work.
+
+Both collaborators are MATLAB beginners. Explain concepts in plain language, one topic at a time, including the reasoning behind equations and implementation choices. Distinguish necessary initial work, useful work that can wait, and optional work. Separate agreed decisions, proposals, assumptions, and unresolved questions; do not invent missing details or treat unvalidated results as established findings.
+
+Retained collaboration guidance:
 
 - Maintain common instructions in `AGENTS.md`.
 - Import those instructions from `CLAUDE.md` using `@AGENTS.md`.
@@ -200,7 +220,7 @@ This project is developed by two collaborators using Codex and Claude Code.
 - Record decisions, tests, limitations, and next steps in task handoff notes.
 - Clearly distinguish tests that were run from checks that remain unverified.
 
-## Initial Milestones
+## Earlier Milestone Proposals (Not an Agreed Plan)
 
 - [ ] Define the first parameter study and aerodynamic outputs
 - [ ] Agree on units, sign conventions, and reference quantities
