@@ -46,3 +46,24 @@
   Preserve anything needed to reproduce results.
 - Never delete another collaborator's files or unrelated work.
 - Summarize which files were created, changed, and retained.
+
+## Session closeout and Git instructions
+
+- When the user asks to "Finish this working session and prepare a handoff for
+  my collaborator", complete the requested review and documentation updates,
+  then include exact copy-and-paste Ubuntu commands for the user to commit and
+  push. Do not commit or push on their behalf.
+- Tailor commands to the actual repository path, verified branch, and exact
+  intended files for that session. Use explicit paths in `git add`, never a
+  blanket `git add .`. Exclude raw data, credentials, temporary files, and
+  unrelated changes; inspect existing staged changes before giving instructions.
+- Provide steps to check status and branch, stage the intended files, review the
+  staged file list and diff, run `git diff --cached --check`, commit with a complete
+  quoted message describing the work, integrate the intended remote branch with
+  `git pull --rebase`, push normally, and verify final status and commit.
+- Tell the user to run commands one at a time and stop if any command fails or
+  reports conflicts. Never recommend force-pushing. If remote changes are
+  integrated, identify relevant checks to rerun before pushing. Explain expected
+  intentionally untracked files and how to exit Git's viewer with `Q`.
+- If the branch or remote is unexpected, explain the discrepancy before providing
+  push commands; do not silently switch branches or change remotes.
