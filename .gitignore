@@ -1,0 +1,5 @@
+work/
+data/raw/
+__pycache__/
+*.pyc
+*.asv
