@@ -210,7 +210,7 @@ This university project is for **Strohm und Söhne e.V. Noris Racing**, at **Tec
 
 Both collaborators are MATLAB beginners. Explain concepts in plain language, one topic at a time, including the reasoning behind equations and implementation choices. Distinguish necessary initial work, useful work that can wait, and optional work. Separate agreed decisions, proposals, assumptions, and unresolved questions; do not invent missing details or treat unvalidated results as established findings.
 
-The [project report](docs/REPORT.md) records methods, reasoning, evidence, and unanswered questions for future team members. Ask each collaborator their name at session start; never infer identity from a path. Proposed responsibilities and identity placeholders are recorded in the specification.
+The [project report](docs/REPORT.md) records methods, reasoning, evidence, and unanswered questions for future team members. Ask each collaborator their name at session start; never infer identity from a path. Confirmed collaborator names and proposed responsibilities are recorded in the specification.
 
 A [Microsoft Word version of the report](results/project-documentation/Formula_Student_Aerodynamic_Mapping_Report.docx) is available for download. It is a working project report, not a completed thesis. The Markdown report remains the editable source; regenerate the Word copy after updating it with `python3 results/project-documentation/build_report.py`. Regeneration overwrites the Word copy, so keep substantive edits in the Markdown source. The generator uses only Python's standard library and supports the current report structure. Review its cover date/status and check the layout in Word before sharing an updated copy.
 

@@ -2,13 +2,17 @@
 
 ## Shared context and working preferences
 
-- Read `docs/SPEC.md` and relevant notes in `docs/handoffs/` when starting work.
-  Use `README.md` for the project overview. Review recent commits and local
-  changes, summarize the current state and open questions, and choose the
-  session's task with the collaborator before starting new work.
-- At the start of each new session, ask the user's preferred name. An explicit
-  introduction in that session satisfies this requirement. Never infer identity
-  from workspace paths or account names. Confirm placeholder names before use.
+- At the start of each new session, before reviewing files or summarizing, ask
+  the user's preferred name and wait for the answer. An explicit introduction in
+  that session satisfies this requirement. Never infer identity from workspace
+  paths or account names. Confirm placeholder names before use.
+- Once the name is known, read `docs/SPEC.md`, `README.md`, and the notes in
+  `docs/handoffs/`. Identify that collaborator's most recent handoff and previous
+  task, and the other collaborator's recent work. Review recent commits and local
+  changes, summarize the current state, the user's previous task, and open
+  questions, and choose the session's task with the collaborator before starting
+  new work. Record the session collaborator's confirmed name at the top of each
+  handoff so their previous task can be found.
 - Label individual research directions and handoff contributions with confirmed
   names; keep shared decisions separate. Ask about the collaborator's research
   focus and current task when setting up a new collaborator, then request other

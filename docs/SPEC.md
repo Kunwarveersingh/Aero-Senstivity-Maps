@@ -38,8 +38,14 @@ discussion with the collaborator; neither is a finalized workflow.
 | Collaborator | Proposed focus | Identity status |
 |---|---|---|
 | Kunwar | CAD preparation/editing, CFD setup and simulations, Python automation/data processing | Confirmed name |
-| Collaborator | Theory, evidence requirements, simulation counts, variables and values | Advaith is a placeholder; ask for confirmation |
+| Advaith | Theory, evidence requirements, simulation counts, variables and values | Confirmed name |
 | Both | Learn and develop MATLAB code together | Shared intention |
+
+Advaith's chosen research direction is building a ground-up understanding of
+aero maps: their components, the variables and parameters to consider, and how
+performance and sensitivity maps are built and interpreted. This is a learning
+and research direction, not a selected methodology. Advaith has not yet
+confirmed or declined the full proposed focus in the table above.
 
 The expectation is that research will identify suitable values by the time CAD
 is ready; this is not a deadline. The proposed case-generation approach is to
@@ -115,8 +121,8 @@ The detailed workflow and timeline, parameter definitions and ranges, simulation
 count and case selection, output definitions, CSV schema, numerical methods,
 validation criteria, software versions and dependencies, template changes, and
 automation mechanism remain undecided. No equations, simulation matrix, or
-implementation choices are established by these discussions. Confirm the
-collaborator's identity, proposed responsibilities, and parallel preparation
+implementation choices are established by these discussions. Both names are
+confirmed; confirm the proposed responsibilities and parallel preparation
 approach before treating them as shared commitments.
 
 The README retains earlier candidate variables, outputs, validation ideas, and

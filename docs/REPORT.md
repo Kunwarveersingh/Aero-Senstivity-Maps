@@ -6,8 +6,7 @@ Working report for Strohm und Söhne e.V. Noris Racing, Technische Hochschule
 Nürnberg Georg Simon Ohm. This scaffold records the introduction and initial
 literature findings; it is not a completed thesis or evidence of completed CFD.
 Use [SPEC.md](SPEC.md) for decision status and [handoffs](handoffs/) for session history.
-Kunwar is a confirmed contributor. The other collaborator's name must be confirmed;
-"Advaith" is a placeholder, not a confirmed author attribution.
+Kunwar and Advaith are confirmed contributors.
 
 ## 1. Introduction and objectives
 
