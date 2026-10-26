@@ -131,3 +131,19 @@ and decisions researched outside Codex or Claude Code. Ask focused questions as
 each topic is reached; record contributor, rationale, sources/evidence, and status.
 Unanswered sections remain "To be documented". Literature findings, proposed
 methods, and validated results for this car must remain distinct.
+
+Kunwar requested a Microsoft Word report with a simple academic layout for
+potential professional sharing. Its title is general to the whole project:
+"Aerodynamic Performance and Sensitivity Mapping for a Formula Student Car";
+the cover must not be tied to the current Phase 1 task. Keep its working-report
+status explicit while research and results remain incomplete.
+
+The current documentation workflow uses `docs/REPORT.md` as the source and
+`results/project-documentation/build_report.py` to generate
+`results/project-documentation/Formula_Student_Aerodynamic_Mapping_Report.docx`.
+The generator uses Python's standard library and supports the report's current
+Markdown structure; it is not a general Markdown converter. Regeneration replaces
+the Word copy, so preserve substantive edits in the Markdown source. Review the
+cover date/status in the generator and check the rendered layout before sharing.
+This documentation addition does not change the research scope or establish a
+CFD, data-processing, or MATLAB implementation.
